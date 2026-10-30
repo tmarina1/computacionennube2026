@@ -4,14 +4,16 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "start": "node --import ./load-secrets.mjs server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test test/*.test.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "description": "BookStore Co. operational API backed by PostgreSQL",
   "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.1160.0",
     "cookie": "0.7.2",
     "cors": "2.8.5",
     "dotenv": "17.2.3",
